@@ -1,14 +1,20 @@
-# reduce-propka-workshop
+# CCPBioSim PDB2PQR Workshop
 
-A vital part of preparing a protein structure for MD simulation is adding hydrogen atoms, as the crystal structures that form the starting point for many simulation projects lack these. 'Black box' tools that come with certain MD packages can have limitations, so using a more sophisticated 3rd-party software tool to check this is always a good idea.
+[![build](https://github.com/ccpbiosim/pdb2pqr-workshop/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/ccpbiosim/pdb2pqr-workshop/actions/workflows/build.yaml)
 
-This short workshop illustrates the application of [Reduce](http://kinemage.biochem.duke.edu/lab/members.php) and [Propka](https://github.com/jensengroup/propka-3.1) to the analysis of the tautomeric and ionization states of residues in the structure of the cysteine protease cruzein (PDB code 2oz2) - the results may not be what you would have expected!
+## Docker
 
-## Requirements
-A basic knowledge of Python and MD simulation methods
+This container is derived from the CCPBioSim JupyterHub image. This container
+adds the necessary software packages and notebook content to form a deployable
+course container.
 
-## Training material
-A Jupyter notebook and associated data files
+## How to Use
+
+
+In our containers we are using the JupyterHub default port 8888, so you should
+forward this port when deploying locally::
+
+    docker run -p 8888:8888 ghcr.io/jimboid/biosim-pdb2pqr-workshop:latest
 
 ## Contact
 Please direct all comments and queries to [Charlie Laughton](mailto:charles.laughton@nottingham.ac.uk)
