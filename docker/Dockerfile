@@ -17,7 +17,7 @@ RUN pip install mdtraj pdb2pqr
 
 # Clone workshop contents
 COPY --chown=1000:100 . .
-RUN rm -r AUTHORS LICENSE README.md Reduce_and_Propka.ipynb docker .git .github
+RUN rm -rf AUTHORS LICENSE README.md Reduce_and_Propka.ipynb docker .git .github
 
 # Copy lab workspace
 COPY --chown=1000:100 docker/default-37a8.jupyterlab-workspace /home/jovyan/.jupyter/lab/workspaces/default-37a8.jupyterlab-workspace
