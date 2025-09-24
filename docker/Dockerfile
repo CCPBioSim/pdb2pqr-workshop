@@ -12,7 +12,7 @@ USER $NB_USER
 WORKDIR $HOME
 
 # Install workshop deps
-RUN conda install nglview ipywidgets -c conda-forge -y
+RUN mamba install nglview ipywidgets -c conda-forge -y
 RUN pip install mdtraj pdb2pqr
 
 # Clone workshop contents
