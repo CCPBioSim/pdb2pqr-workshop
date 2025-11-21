@@ -14,7 +14,7 @@ course container.
 In our containers we are using the JupyterHub default port 8888, so you should
 forward this port when deploying locally::
 
-    docker run -p 8888:8888 ghcr.io/jimboid/biosim-pdb2pqr-workshop:latest
+    docker run -p 8888:8888 ghcr.io/ccpbiosim/pdb2pqr-workshop:latest
 
 ## Contact
 Please direct all comments and queries to [Charlie Laughton](mailto:charles.laughton@nottingham.ac.uk)
