@@ -9,8 +9,15 @@ USER $NB_USER
 WORKDIR $HOME
 
 # Install workshop deps
-RUN mamba install nglview ipywidgets -c conda-forge -y
-RUN pip install mdtraj pdb2pqr
+RUN conda install -y -c conda-forge \
+    nglview=4.0.1 \
+    ipywidgets=8.1.9
+RUN pip install --no-cache-dir \
+    mdtraj==1.11.1 \
+    pdb2pqr==3.7.1
+
+COPY docker/fix-nglview.sh /tmp/fix-nglview.sh
+RUN bash /tmp/fix-nglview.sh
 
 # Clone workshop contents
 COPY --chown=1000:100 . .
