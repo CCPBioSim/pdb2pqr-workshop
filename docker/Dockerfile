@@ -13,7 +13,7 @@ RUN conda install -y -c conda-forge \
     nglview=4.0.1 \
     ipywidgets=8.1.9
 RUN pip install --no-cache-dir \
-    mdtraj==1.11.1 \
+    mdtraj==1.11.1.post2 \
     pdb2pqr==3.7.1
 
 COPY docker/fix-nglview.sh /tmp/fix-nglview.sh
