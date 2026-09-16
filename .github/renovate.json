@@ -15,5 +15,18 @@
       "groupName": "GitHub Actions",
       "addLabels": ["ci", "dependencies"]
     }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["(^|/)Dockerfile[^/]*$"],
+      "matchStringsStrategy": "recursive",
+      "matchStrings": [
+        "pip3? install[\\s\\S]*?(?<packages>(?:[\\w.-]+==[\\w.-]+[\\s\\\\]*)+)",
+        "(?<depName>[\\w.-]+)==(?<currentValue>[\\w.-]+)"
+      ],
+      "datasourceTemplate": "pypi",
+      "versioningTemplate": "pep440"
+    }
   ]
 }
