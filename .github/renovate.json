@@ -19,7 +19,9 @@
   "customManagers": [
     {
       "customType": "regex",
-      "fileMatch": ["(^|/)Dockerfile[^/]*$"],
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile[^/]*$/"
+      ],
       "matchStringsStrategy": "recursive",
       "matchStrings": [
         "pip3? install[\\s\\S]*?(?<packages>(?:[\\w.-]+==[\\w.-]+[\\s\\\\]*)+)",
