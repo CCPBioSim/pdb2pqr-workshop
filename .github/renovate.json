@@ -5,7 +5,7 @@
     "helpers:pinGitHubActionDigestsToSemver"
   ],
   "timezone": "Europe/London",
-  "schedule": ["after 9am and before 5pm every weekday"],
+  "schedule": ["after 6am and before 5pm every weekday"],
   "dependencyDashboard": true,
   "assignees": ["jimboid"],
   "minimumReleaseAge": "3 days",
@@ -28,6 +28,20 @@
         "(?<depName>[\\w.-]+)==(?<currentValue>[\\w.-]+)"
       ],
       "datasourceTemplate": "pypi",
+      "versioningTemplate": "pep440"
+    },
+    {
+      "customType": "regex",
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile[^/]*$/"
+      ],
+      "matchStringsStrategy": "recursive",
+      "matchStrings": [
+        "(?:mamba|conda) install[\\s\\S]*?(?<packages>(?:(?:[\\w-]+::)?[\\w.-]+=[\\w.-]+[\\s\\\\]*)+)",
+        "(?:(?<channel>[\\w-]+)::)?(?<depName>[\\w.-]+)=(?<currentValue>[\\w.-]+)"
+      ],
+      "datasourceTemplate": "conda",
+      "registryUrlTemplate": "https://api.anaconda.org/package/{{#if channel}}{{channel}}{{else}}conda-forge{{/if}}/",
       "versioningTemplate": "pep440"
     }
   ]
