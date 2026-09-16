@@ -10,8 +10,8 @@ WORKDIR $HOME
 
 # Install workshop deps
 RUN conda install -y -c conda-forge \
-    nglview=4.0.1 \
-    ipywidgets=8.1.9
+    conda-forge::nglview=4.0.1 \
+    conda-forge::ipywidgets=8.1.9
 RUN pip install --no-cache-dir \
     mdtraj==1.11.1 \
     pdb2pqr==3.7.1
